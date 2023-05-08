@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +8,7 @@
 }
 
 body {
-    background-color: #00035b;
+    background-color: red;
     display: flex;
     flex-direction: column;
     color: white;
@@ -16,6 +17,7 @@ body {
     justify-content: center;
     height: 100vh
 }
+
 
 .seat {
     background-color: cornflowerblue;
@@ -35,7 +37,7 @@ body {
 }
 
 .seat.selected {
-    background-color: #ffa500;
+    background-color: #da7202;
 }
 
 .seat.occupied {
@@ -71,6 +73,81 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 10px;
+    margin: 0 20px;
 }
 
+.showcase li small {
+    margin-left: 10px;
+}
+
+.screen {
+    background-color: #fff;
+    height: 70px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-50deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.75);
+}
+
+.container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+p.text {
+    margin: 5 px 0;
+}
+
+p.text span {
+    color:#ffa500
+}
+
+.movies-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .movie {
+    width: 200px;
+    height: 300px;
+    margin-right: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .movie:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie:last-child {
+    margin-right: 0;
+  }
+  
+  .movie img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .movie h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  h2 {
+    margin-bottom: 25px;
+  }
+
+  
+  .ic_seat {
+    font-size: 32px;
+    color: rgb(51, 51, 51);
+  }
