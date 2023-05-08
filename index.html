@@ -17,17 +17,24 @@
             <option value="25">Avatar: The Way Of Water (Price: 25$)</option>
         </select>
     </div>
-        <ul class="showcase">
-            <li>
-                <div class="seat">Free </div>
-            </li>
-            <li>
-                <div class="seat selected">Selected</div>
-            </li>
-            <li>
-                <div class="seat occupied">Occupied</div>
-            </li>
-        </ul>
+    <div class="card-container">
+        <div class="card">
+          <img src="" alt="Once Upon A Time In Hollywood (Price: 15$)">
+          <h3>Назва фільму 1</h3>
+        </div>
+        <div class="card">
+          <img src="film2.jpg" alt="Guardians of the Gallaxy 3 (Price: 17$)">
+          <h3>Назва фільму 2</h3>
+        </div>
+        <div class="card">
+          <img src="film3.jpg" alt="Everything Everywhere All At Once (Price: 20$)">
+          <h3>Назва фільму 3</h3>
+        </div>
+        <div class="card">
+          <img src="film4.jpg" alt="Avatar: The Way Of Water (Price: 25$)">
+          <h3>Назва фільму 4</h3>
+        </div>
+      </div>
     <div class="container">
         <div class="screen"></div>
         <div class="row">
@@ -116,7 +123,23 @@
         </div>
     </div>
 
-    <p class="text">You have selected <span id="count">0</span>seats. Total price:$<span id="total">0</span></p>
+    <ul class="showcase">
+        <li>
+            <div class="seat"></div>
+            <small>Available</small>
+        </li>
+        <li>
+            <div class="seat selected"></div>
+            <small>Selected</small>
+        </li>
+        <li>
+            <div class="seat occupied"></div>
+            <small>Occupied</small>
+        </li>
+    </ul>
+
+    <p class="text">Seats selected: <span id="count">0</span>seats. <br>
+        Total price: $<span id="total">0</span></p>
     <script src="main.js"></script>
 </body>
 </html>
