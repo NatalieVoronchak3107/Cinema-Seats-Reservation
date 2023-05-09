@@ -8,31 +8,49 @@
 }
 
 body {
-    background-color: black;
+    background-image: url('/images/Cinema.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     color: white;
     font-family: 'Questrial', sans-serif;
     align-items: center;
-    justify-content: center;
-    height: 100vh
 }
 
 .ic_couch {
     font-family: 'iconfont';
-    font-size: 16px;
-    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(11, 103, 11);
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
-/*.seat {
-    background-color: cornflowerblue;
-    height: 12px;
-    width: 15px;
-    margin: 3px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}*/
+.ic_couch.selected {
+    color: #ffa500;
+}
+
+.ic_couch.occupied {
+    color: rgb(18, 32, 161);
+}
+.ic_couch:nth-of-type(4) {
+    margin-right: 20px;
+}
+.ic_couch:nth-last-of-type(4) {
+    margin-left: 20px;
+}
+
+.ic_couch:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.legend .ic_couch:not(.occupied):hover {
+    cursor: default;
+    transform: scale (1);
+}
 
 .row {
     display: flex;
@@ -40,30 +58,6 @@ body {
 
 .movie-container {
     margin: 20px 0;
-}
-
-.seat.selected {
-    background-color: #da7202;
-}
-
-.seat.occupied {
-    background-color: #d1cccb;
-}
-.seat:nth-of-type(3) {
-    margin-right: 20px;
-}
-.seat:nth-last-of-type(3) {
-    margin-left: 20px;
-}
-
-.seat:not(.occupied):hover {
-    cursor: pointer;
-    transform: scale(1.2);
-}
-
-.legend .seat:not(.occupied):hover {
-    cursor: default;
-    transform: scale (1);
 }
 
 .legend {
@@ -102,6 +96,7 @@ body {
 
 p.text {
     margin: 5 px 0;
+
 }
 
 p.text span {
@@ -117,7 +112,7 @@ p.text span {
   
   .movie {
     width: 200px;
-    height: 330px;
+    height: 290px;
     margin-right: 20px;
     text-align: center;
     background-color: #fff;
@@ -128,7 +123,8 @@ p.text span {
   }
   
   .movie:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(221, 72, 38, 0.5), 0 0 20px #ca8e78;
   }
   
   .movie:last-child {
@@ -149,13 +145,8 @@ p.text span {
   }
   
   h2 {
+    margin-top: 50px;
     margin-bottom: 25px;
-  }
-
-
-  .ic_couch {
-    font-family: 'iconfont';
-    font-size: 16px;
-    color: white;
-    margin-right: 10px;
+    color: rgba(131, 5, 5, 0.709);
+    font-weight: 800;
   }
