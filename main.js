@@ -24,20 +24,30 @@ movieElements.forEach((movie, index) => {
   });
 });
 
-// Updating total price and seats count 
 function updateSelectedCount() {
-  const selectedSeats = document.querySelectorAll('.row .ic_couch.selected');
-  const selectedSeatsCount = selectedSeats.length;
-
-  const seatsIndex = [...selectedSeats].map(function (ic_couch){
-    return [...couches].indexOf(ic_couch);
-  }) 
-
-  localStorage.setItem ('selectedSeats', JSON.stringify(seatsIndex));
-
-  count.innerText = selectedSeatsCount;
-  total.innerText = selectedSeatsCount * selectedMoviePrice;
-}
+    const selectedSeats = document.querySelectorAll('.row .ic_couch.selected');
+    const selectedSeatsCount = selectedSeats.length;
+    const selectedSeatsElement = document.getElementById('selected-seats');
+  
+    const seatsArray = Array.from(selectedSeats).map(seat => {
+      const row = seat.parentElement.dataset.row;
+      const seatNumber = seat.dataset.seat;
+      return { row, seatNumber };
+    });
+  
+    const seatsDisplayArray = seatsArray.map(seat => `${seat.row}: ${seat.seatNumber}`);
+  
+    const seatsIndex = [...selectedSeats].map(ic_couch => {
+      return [...couches].indexOf(ic_couch);
+    });
+  
+    localStorage.setItem('selectedSeats', JSON.stringify(seatsIndex));
+    localStorage.setItem('selectedSeatsArray', JSON.stringify(seatsArray));
+  
+    selectedSeatsElement.innerText = seatsDisplayArray.join(', ');
+    count.innerText = selectedSeatsCount;
+    total.innerText = selectedSeatsCount * selectedMoviePrice;
+  }
 
 container.addEventListener('click', (e) => {
   if (e.target.classList.contains('ic_couch') && !e.target.classList.contains('occupied')) {
