@@ -20,6 +20,12 @@ function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll('.row .ic_couch.selected');
   const selectedSeatsCount = selectedSeats.length;
 
+  const seatsIndex = [...selectedSeats].map(function (ic_couch){
+    return [...couches].indexOf(ic_couch);
+  }) 
+
+  localStorage.setItem ('selectedSeats', JSON.stringify(seatsIndex));
+
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * selectedMoviePrice;
 }
