@@ -24,6 +24,7 @@ movieElements.forEach((movie, index) => {
   });
 });
 
+// 
 function updateSelectedCount() {
     const selectedSeats = document.querySelectorAll('.row .ic_couch.selected');
     const selectedSeatsCount = selectedSeats.length;
