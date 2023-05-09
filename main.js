@@ -7,11 +7,20 @@ const moviesContainer = document.querySelector('.movies-container');
 const movieElements = moviesContainer.querySelectorAll('.movie');
 let selectedMoviePrice = null;
 
-movieElements.forEach(movie => {
+// Saving selected movie index and the price
+function saveMovieData (selectedMoviePrice, index) {
+    localStorage.setItem('selectedMoviePrice', selectedMoviePrice);
+    localStorage.setItem('index', index);
+    console.log(`Selected movie price: ${selectedMoviePrice}`);
+    console.log(`Movie index: ${index}`);
+}
+
+// Updating the count and total price when a new movie is selected
+movieElements.forEach((movie, index) => {
   movie.addEventListener('click', () => {
     selectedMoviePrice = parseInt(movie.dataset.price);
-    console.log(`Selected movie price: ${selectedMoviePrice}`);
-    updateSelectedCount(); // Update the count and total when a new movie is selected
+    saveMovieData(selectedMoviePrice, index);
+    updateSelectedCount(); 
   });
 });
 
