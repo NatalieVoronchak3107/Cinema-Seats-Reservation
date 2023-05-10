@@ -164,10 +164,14 @@ h2 {
     font-weight: 800;
 }
 
-button#clear-selection {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: var(--color-red);
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+  
+button {
+    margin: 15px;
+    padding: 10px 10px;
     color: var(--color-white);
     border: none;
     border-radius: 5px;
@@ -175,8 +179,18 @@ button#clear-selection {
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 170px; 
+    height: 40px;
 }
 
-button#clear-selection:hover {
+button#clear-selection {
+    background-color: var(--color-red);
+}
+
+button#checkout {
+    background-color: var(--color-orange);
+}
+
+button:hover {
     transform: scale(1.05);
 }
