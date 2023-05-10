@@ -7,7 +7,7 @@ const movieElements = moviesContainer.querySelectorAll('.movie');
 
 let selectedMoviePrice = null;
 
-// Saving selected movie index and the price in Local Storage
+/*// Saving selected movie index and the price in Local Storage
 function saveMovieData (selectedMoviePrice, index) {
     localStorage.setItem('selectedMoviePrice', selectedMoviePrice);
     localStorage.setItem('index', index);
@@ -22,6 +22,24 @@ movieElements.forEach((movie, index) => {
   movie.addEventListener('click', () => {
     selectedMoviePrice = parseInt(movie.dataset.price);
     saveMovieData(selectedMoviePrice, index);
+    updateSelectedCount(); 
+  });
+});*/
+
+function saveMovieData (movieName, selectedMoviePrice, index) {
+    localStorage.setItem('selectedMovie', movieName);
+    localStorage.setItem('selectedMoviePrice', selectedMoviePrice);
+    localStorage.setItem('index', index);
+    console.log(`Selected movie: ${movieName}`);
+    console.log(`Selected movie price: ${selectedMoviePrice}`);
+    console.log(`Movie index: ${index}`);
+}
+
+movieElements.forEach((movie, index) => {
+  movie.addEventListener('click', () => {
+    const movieName = movie.dataset.name;
+    selectedMoviePrice = parseInt(movie.dataset.price);
+    saveMovieData(movieName, selectedMoviePrice, index);
     updateSelectedCount(); 
   });
 });
@@ -53,7 +71,7 @@ function updateSelectedCount() {
     total.innerText = selectedSeatsCount * selectedMoviePrice;
 }
 
-function updateUI() {
+/*function updateUI() {
   const selectedSeatsIndexes = JSON.parse(localStorage.getItem('selectedSeats'));
   const seats = document.querySelectorAll('.row .ic_couch');
 
@@ -70,7 +88,33 @@ function updateUI() {
   if (selectedMovieIndex !== null) {
     movieElements[selectedMovieIndex].click();
   }
-}
+}*/
+
+function updateUI() {
+    const selectedSeatsIndexes = JSON.parse(localStorage.getItem('selectedSeats'));
+    const seats = document.querySelectorAll('.row .ic_couch');
+  
+    if (selectedSeatsIndexes !== null && selectedSeatsIndexes.length > 0) {
+      seats.forEach((seat, index) => {
+        if (selectedSeatsIndexes.indexOf(index) > -1) {
+          seat.classList.add('selected');
+        }
+      });
+    }
+  
+    const selectedMovieIndex = localStorage.getItem('index');
+    const selectedMovie = localStorage.getItem('selectedMovie');
+    const movieElement = document.getElementById('movie');
+  
+    if (selectedMovie !== null) {
+      movieElement.innerText = selectedMovie;
+    }
+  
+    if (selectedMovieIndex !== null) {
+      movieElements[selectedMovieIndex].click();
+    }
+  }
+  
 
 
 container.addEventListener('click', (e) => {
