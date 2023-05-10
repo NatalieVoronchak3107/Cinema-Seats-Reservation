@@ -53,7 +53,7 @@ function updateSelectedCount() {
     total.innerText = selectedSeatsCount * selectedMoviePrice;
 }
 
- /*function updateUI() {
+function updateUI() {
   const selectedSeatsIndexes = JSON.parse(localStorage.getItem('selectedSeats'));
   const seats = document.querySelectorAll('.row .ic_couch');
 
@@ -70,25 +70,7 @@ function updateSelectedCount() {
   if (selectedMovieIndex !== null) {
     movieElements[selectedMovieIndex].click();
   }
-}*/
-
-function updateUI() {
-    const selectedSeatsIndexes = JSON.parse(localStorage.getItem('selectedSeats'));
-    const seats = document.querySelectorAll('.row .ic_couch');
-  
-    if (selectedSeatsIndexes !== null && selectedSeatsIndexes.length > 0) {
-      // Sort the selected seats by their indexes
-      selectedSeatsIndexes.sort().forEach((seatIndex) => {
-        seats[seatIndex].classList.add('selected');
-      });
-    }
-  
-    const selectedMovieIndex = localStorage.getItem('index');
-  
-    if (selectedMovieIndex !== null) {
-      movieElements[selectedMovieIndex].click();
-    }
-  }
+}
 
 
 container.addEventListener('click', (e) => {
