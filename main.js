@@ -92,4 +92,36 @@ container.addEventListener('click', (e) => {
   }
 });
 
+//Clearing all selected elements
+const clearButton = document.getElementById('clear-selection');
+
+clearButton.addEventListener('click', clearSelection);
+
+function clearSelection() {
+    // Deselect all selected seats
+    const selectedSeats = document.querySelectorAll('.row .ic_couch.selected');
+    selectedSeats.forEach(seat => {
+        seat.classList.remove('selected');
+    });
+
+    // Reset selected movie
+    const movieElement = document.getElementById('movie');
+    movieElement.innerText = 'No movie selected';
+
+    // Clear selected seat numbers
+    const selectedSeatsElement = document.getElementById('selected-seats');
+    selectedSeatsElement.innerText = '';
+
+    // Clear selection from Local Storage
+    localStorage.removeItem('selectedSeats');
+    localStorage.removeItem('selectedSeatsArray');
+    localStorage.removeItem('selectedMovie');
+    localStorage.removeItem('selectedMoviePrice');
+    localStorage.removeItem('index');
+
+    // Reset count and total price
+    count.innerText = 0;
+    total.innerText = 0;
+}
+
 updateUI();
