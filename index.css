@@ -23,7 +23,7 @@ body {
     font-family: 'iconfont';
     font-size: 18px;
     font-weight: 500;
-    color: rgb(11, 103, 11);
+    color: rgb(36, 146, 36);
     margin-right: 10px;
     margin-bottom: 10px;
 }
@@ -33,7 +33,7 @@ body {
 }
 
 .ic_couch.occupied {
-    color: rgb(18, 32, 161);
+    color: rgb(127, 135, 203);
 }
 .ic_couch:nth-of-type(4) {
     margin-right: 20px;
@@ -73,7 +73,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 .legend li small {
@@ -81,7 +81,7 @@ body {
 }
 
 .screen {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.893);
     height: 70px;
     width: 100%;
     margin: 15px 0;
@@ -91,7 +91,7 @@ body {
 
 .container {
     perspective: 1000px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 p.text {
@@ -145,7 +145,7 @@ p.text span {
   }
   
   h2 {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 25px;
     color: rgba(131, 5, 5, 0.709);
     font-weight: 800;

@@ -10,26 +10,26 @@
   <body>
     <h2>Select a Movie</h2>
     <div class="movies-container">
-      <div class="movie" data-price="15">
+      <div class="movie" data-name="Once Upon A Time In Hollywood" data-price="15">
         <img src="images/Hollywood.jpg" alt="Once Upon A Time In Hollywood">
         <h3>Price: 15$</h3>
       </div>
-      <div class="movie" data-price="17">
+      <div class="movie" data-name="Guardians of the Gallaxy 3" data-price="17">
         <img src="images/Guardians.jpeg" alt="Guardians of the Gallaxy 3">
         <h3>Price: 17$</h3>
       </div>
-      <div class="movie" data-price="20">
+      <div class="movie" data-name="Everything Everywhere All At Once" data-price="20">
         <img
           src="images/Everything.jpg"
           alt="Everything Everywhere All At Once"
         />
         <h3>Price: 20$</h3>
       </div>
-      <div class="movie" data-price="23">
+      <div class="movie" data-name="Avatar: The Way Of Water" data-price="23">
         <img src="images/Avatar.jpg" alt="Avatar: The Way Of Water">
         <h3>Price: 23$</h3>
       </div>
-      <div class="movie" data-price="25">
+      <div class="movie" data-name="Knives Out" data-price="25">
         <img src="images/Knives.jpeg" alt="Knives Out">
         <h3>Price: 25$</h3>
       </div>
@@ -37,19 +37,19 @@
     <div class="container">
       <div class="screen"></div>
       <div class="row" data-row="A">
-        <i class="ic_couch occupied" data-seat="1"></i>
-        <i class="ic_couch occupied" data-seat="2"></i>
+        <i class="ic_couch" data-seat="1"></i>
+        <i class="ic_couch" data-seat="2"></i>
         <i class="ic_couch" data-seat="3"></i>
         <i class="ic_couch" data-seat="4"></i>
-        <i class="ic_couchd" data-seat="5"></i>
-        <i class="ic_couch" data-seat="6"></i>
-        <i class="ic_couch" data-seat="7"></i>
-        <i class="ic_couch" data-seat="8"></i>
-        <i class="ic_couch occupied" data-seat="9"></i>
-        <i class="ic_couch occupied" data-seat="10"></i>
-        <i class="ic_couch occupied" data-seat="11"></i>
-        <i class="ic_couch" data-seat="12"></i>
-        <i class="ic_couch" data-seat="13"></i>
+        <i class="ic_couch" data-seat="5"></i>
+        <i class="ic_couch occupied" data-seat="6"></i>
+        <i class="ic_couch occupied" data-seat="7"></i>
+        <i class="ic_couch occupied" data-seat="8"></i>
+        <i class="ic_couch" data-seat="9"></i>
+        <i class="ic_couch" data-seat="10"></i>
+        <i class="ic_couch" data-seat="11"></i>
+        <i class="ic_couch occupied" data-seat="12"></i>
+        <i class="ic_couch occupied" data-seat="13"></i>
         <i class="ic_couch" data-seat="14"></i>
       </div>
       <div class="row" data-row="B">
@@ -198,11 +198,11 @@
     </ul>
 
     <p class="text">
-        Seats selected: <span id="count">0</span> seats. <br />
-        Row and Seat number: <span id="selected-seats"></span> <br />
+        Movie selected: <span id="movie"></span> <br>
+        Seats selected: <span id="count">0</span> seats. <br>
+        Row and Seat number: <span id="selected-seats"></span> <br>
         Total price: $<span id="total">0</span>
-      </p>
-
+    </p>
     <script src="main.js"></script>
   </body>
 </html>
