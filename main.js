@@ -1,3 +1,5 @@
+// main page
+
 const container = document.querySelector('.container');
 const couches = document.querySelectorAll('.row .ic_couch:not(.occupied)');
 const count = document.getElementById('count');
@@ -125,3 +127,9 @@ function clearSelection() {
 }
 
 updateUI();
+
+// checkout page
+
+document.getElementById('checkout').addEventListener('click', function() {
+  window.location.href = "checkout.html";
+});
